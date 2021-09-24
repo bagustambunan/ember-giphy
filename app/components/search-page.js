@@ -2428,4 +2428,9 @@ export default class PeopleListComponent extends Component {
       },
     },
   ];
+
+  @action
+  showPerson(person) {
+    alert(`The person's name is ${person}!`);
+  }
 }
