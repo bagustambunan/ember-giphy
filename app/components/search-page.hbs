@@ -1,12 +1,13 @@
 <div class="">
-    <input type="text" class="bg-gray-200 px-4 py-3 rounded-bl-lg rounded-tl-lg w-10/12" placeholder="Type anything..."/>
-    <button {{on 'click' this.showPerson "Bagus"}} class="bg-yellow-400 text-white px-4 py-3 rounded-br-lg rounded-tr-lg font-bold w-1/12 hover:bg-yellow-500" type="button"><i class="fa fa-search"></i></button>
+    {{!-- <input onChange={{action this.updateQuery}} value={{this.query}} type="text" class="bg-gray-200 px-4 py-3 rounded-bl-lg rounded-tl-lg w-10/12" placeholder="Type anything..."/> --}}
+    {{input value=this.query onChange=this.updateQuery type="text" placeholder="Type anything..." class="bg-gray-200 px-4 py-3 rounded-bl-lg rounded-tl-lg w-10/12"}}
+    <button {{on 'click' this.doSearch }} class="bg-yellow-400 text-white px-4 py-3 rounded-br-lg rounded-tr-lg font-bold w-1/12 hover:bg-yellow-500" type="button"><i class="fa fa-search"></i></button>
 </div>
 
 <div class="bg-gray-100 p-8 rounded-lg mt-5 flex flex-wrap">
-    {{#each data as |d|}}
-        <Gif
-            @data={{d}}
-        />
-    {{/each}}
+
+    <Gif
+        @images={{this.images}}
+    />
+
 </div>

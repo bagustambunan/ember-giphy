@@ -1,4 +1,6 @@
-<div class="justify-start w-3/12 p-3">
-    <img src={{@data.images.original.url}} title={{@data.title}} class="rounded-lg" alt={{@data.title}}/>
-    <p class="text-sm mt-2 mb-2">{{@data.title}}</p>
-</div>
+{{#each @images as |data|}}
+    <div class="justify-start w-3/12 p-3">
+        <img src={{data.images.original.url}} title={{data.title}} class="rounded-lg" alt={{data.title}}/>
+        <p class="text-sm mt-2 mb-2">{{data.title}}</p>
+    </div>
+{{/each}}
